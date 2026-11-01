@@ -5,13 +5,13 @@ description: "Animate evidence on a desk as a vertical 9:16 MP4: taped notes on 
 
 # /paper-desk: evidence on the desk, marked up
 
-A cream paper sheet drops onto a green cutting mat and gets taped down. A chart draws itself on it, a red marker rings the key part, and a handwritten note with an arrow ("THEY LEAVE HERE") writes itself beside the ring. A torn label ("THE HOOK") slaps down, then a second note card slides in and one sentence on it gets a yellow highlighter sweep. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
+A cream paper sheet drops onto a green cutting mat and gets taped down. A chart draws itself on it, a red marker rings the key part, and a handwritten note with an arrow ("INTERVAL SLUMP") writes itself beside the ring. A torn label ("THE INTERVAL") slaps down, then a second note card slides in and one sentence on it gets a yellow highlighter sweep. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
 
 Good for: "here's what the data says" posts, research findings, retention or funnel insights, case-study evidence, teaching one chart.
 
 ## 1. Get the content
 
-The user usually pastes a finding (e.g. "Most viewers decide in the first three seconds") and then types /paper-desk. Map it into CONFIG:
+The user usually pastes a finding (e.g. "Most AI pilots stall right after the first review") and then types /paper-desk. Map it into CONFIG:
 
 - `figLabel`, `figTitle`: the small mono label and serif headline on the main sheet
 - `series`, `yMax`, `yLabel`, `xStart`, `xEnd`: the chart (any decay, growth or funnel curve works; 8–20 points)
@@ -72,7 +72,7 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--mat)}
 .fig{font:500 13px Mono,monospace;letter-spacing:.1em;text-transform:uppercase;color:#5c5850}
 #figTitle{font:600 34px/1.12 Serif,serif;margin:10px 0 14px;max-width:470px}
 #chart{display:block;overflow:visible}
-#hook{position:absolute;left:60px;top:780px;padding:14px 24px 12px;background:#fbfaf6;font:800 50px/1 Inter,sans-serif;letter-spacing:-.02em;color:#111;transform:rotate(-6deg);clip-path:polygon(0 6%,4% 0,30% 4%,62% 0,100% 5%,98% 48%,100% 96%,70% 100%,35% 95%,3% 100%,0 60%)}
+#hook{position:absolute;left:44px;top:742px;padding:14px 24px 12px;background:#fbfaf6;font:800 50px/1 Inter,sans-serif;letter-spacing:-.02em;color:#111;transform:rotate(-6deg);clip-path:polygon(0 6%,4% 0,30% 4%,62% 0,100% 5%,98% 48%,100% 96%,70% 100%,35% 95%,3% 100%,0 60%)}
 #note{left:300px;top:850px;width:360px;padding:22px 24px 24px;transform:rotate(3deg)}
 #noteText{font:400 21px/1.45 Serif,serif;margin-top:10px}
 .hl{background-image:linear-gradient(var(--hl),var(--hl));background-repeat:no-repeat;background-size:0% 100%;background-position:0 85%}
@@ -91,15 +91,15 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--mat)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  figLabel: "Fig. 3 · Retention, first 30 seconds",
-  figTitle: "Most viewers decide in the first three seconds",
-  series: [100, 71, 52, 41, 36, 33, 31, 30, 29, 28, 27.5, 27, 26.5, 26, 25.6, 25.3], // y values, plotted 0..yMax left→right
-  yMax: 100, yLabel: "100%", xStart: "0 s", xEnd: "30 s",
-  circle: [0, 3],                       // series index range to ring with red marker
-  annotation: "They leave here",        // red handwriting next to the ring ("" to drop)
-  hook: "THE HOOK",                     // slapped-down label
-  noteLabel: "From the notes · p. 14",
-  noteText: "Across our last 40 reels, the steepest drop came early. [[Viewers who made it past the third second mostly stayed to the end.]] After that, the line went flat."
+  figLabel: "Exhibit 2 · Illustrative · AI pilots still active",
+  figTitle: "Most AI pilots stall right after the first review",
+  series: [100, 97, 92, 64, 50, 45, 43, 42, 41, 40, 40, 39], // y values, plotted 0..yMax left→right
+  yMax: 100, yLabel: "100%", xStart: "Month 1", xEnd: "Month 12",
+  circle: [2, 4],                       // series index range to ring with red marker
+  annotation: "Interval slump",         // red handwriting next to the ring ("" to drop)
+  hook: "THE INTERVAL",                 // slapped-down label
+  noteLabel: "From the workshop notes",
+  noteText: "Every pilot looked healthy at the launch review. [[The ones that survived had a named owner before the first demo.]] The rest drifted once the novelty wore off."
 };
 /* ========================================================= */
 const C = CONFIG, $ = s => document.querySelector(s), NS = "http://www.w3.org/2000/svg";

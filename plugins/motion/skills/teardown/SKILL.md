@@ -5,13 +5,13 @@ description: "Animate an exploded product view as a vertical 9:16 MP4: an isomet
 
 # /teardown: exploded view, every part labelled
 
-On a dark dotted backdrop, an assembled isometric object (by default a 21-key mechanical keyboard) rises into view, then separates vertically into its layers. Leader lines draw out to numbered labels ("01 Keycaps · PBT · 1u × 21"), followed by a title ("21 keys, opened") and a mono subtitle. Everything is drawn in SVG from a small layer spec, with no images. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
+On a dark dotted backdrop, an assembled isometric object (by default an 18-key mechanical keyboard) rises into view, then separates vertically into its layers. Leader lines draw out to numbered labels ("01 Keycaps · Cherry profile · 18 keys"), followed by a title ("One keyboard, six layers") and a mono subtitle. Everything is drawn in SVG from a small layer spec, with no images. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
 
 Good for: product breakdowns, "what's inside" posts, explaining a stack or architecture as physical layers (e.g. an AI system: model, tools, memory, interface), and hardware launches.
 
 ## 1. Get the content
 
-The user usually pastes a short line (e.g. "21 keys, opened") and then types /teardown. Map it into CONFIG:
+The user usually pastes a short line (e.g. "One keyboard, six layers") and then types /teardown. Map it into CONFIG:
 
 - `title`, `subtitle`: the caption block at the bottom
 - `grid`: `cols × rows` cells and `pitch`. This sets the object's footprint and the number of keys, holes and chips.
@@ -82,17 +82,17 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  title: "21 keys, opened",
-  subtitle: "Exploded view · 6 layers · 19.05 mm pitch",
-  grid: { cols: 7, rows: 3, pitch: 19 },   // key/cell grid shared by grid, plate holes and the footprint
+  title: "One keyboard, six layers",
+  subtitle: "Exploded view · 18 keys · hot-swap build",
+  grid: { cols: 6, rows: 3, pitch: 19 },   // key/cell grid shared by grid, plate holes and the footprint
   // layers bottom → top. kind: tray | pins | slab | grid. Labels are numbered from the top.
   layers: [
-    { name: "Case",         spec: "Gasket mount · 6063 alloy", kind: "tray", h: 14, color: "#2b2b30", top: "#3a3a40" },
-    { name: "Standoffs",    spec: "Brass · M2 × 6",            kind: "pins", h: 7,  color: "#b08a3e", top: "#d8b25a" },
-    { name: "Circuit board",spec: "Hot-swap · RP2040",         kind: "slab", h: 2.5,color: "#1b5e37", top: "#227a46", chips: true },
-    { name: "Plate",        spec: "1.5 mm aluminium",          kind: "slab", h: 2,  color: "#8c9197", top: "#b7bcc1", holes: true },
-    { name: "Switches",     spec: "Linear · hot-swap",         kind: "grid", h: 7,  color: "#2a2a2e", top: "#38383d", stem: "#d8403a", inset: 2.5 },
-    { name: "Keycaps",      spec: "PBT · 1u × 21",             kind: "grid", h: 9,  color: "#c9c7c2", top: "#f1efe9", accent: "#ff6a2b", accentIndex: 6, inset: 1, taper: 2.4 }
+    { name: "Case",         spec: "Walnut frame · 4° tilt",    kind: "tray", h: 14, color: "#5a3b26", top: "#734c31" },
+    { name: "Standoffs",    spec: "Steel · M2 × 5",            kind: "pins", h: 7,  color: "#8d949b", top: "#b9c0c6" },
+    { name: "Circuit board",spec: "Wireless · USB-C",          kind: "slab", h: 2.5,color: "#1d4f6b", top: "#25668a", chips: true },
+    { name: "Plate",        spec: "Polycarbonate · flex cuts", kind: "slab", h: 2,  color: "#a9b3ad", top: "#d3dbd6", holes: true },
+    { name: "Switches",     spec: "Tactile · 55 g",            kind: "grid", h: 7,  color: "#2a2a2e", top: "#38383d", stem: "#c58b2a", inset: 2.5 },
+    { name: "Keycaps",      spec: "Cherry profile · 18 keys",  kind: "grid", h: 9,  color: "#cfc6b4", top: "#efe7d6", accent: "#2f6f5e", accentIndex: 5, inset: 1, taper: 2.4 }
   ],
   objectX: 250, objectY: 600, scale: 2.05, gap: 66  // assembled position, size, and world-z gap between exploded layers
 };

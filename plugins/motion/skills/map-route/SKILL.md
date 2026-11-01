@@ -5,13 +5,13 @@ description: "Animate a route on a 3D isometric city as a vertical 9:16 MP4: bui
 
 # /map-route: 3D city, a route that draws itself
 
-A clean white isometric city (procedurally generated blocks, parks with trees, a river with bridges) builds outward from the starting point. A blue route then draws itself street by street with a moving marker while the camera pulls back from the start to frame the whole trip. A red pin drops on the destination with its label, and a white ETA card slides up ("12 min · 4.2 km · Fastest route · Go"). Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
+A clean white isometric city (procedurally generated blocks, parks with trees, a river with bridges) builds outward from the starting point. A blue route then draws itself street by street with a moving marker while the camera pulls back from the start to frame the whole trip. A red pin drops on the destination with its label, and a white ETA card slides up ("18 min · 6.1 km · Avoids the flyover · Start"). Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
 
 Good for: "how to find us", venue or office directions, event invites, delivery or travel stories, "my commute" posts.
 
 ## 1. Get the content
 
-The user usually pastes something like "Route to The Studio, 4.2 km" and then types /map-route. Map it into CONFIG:
+The user usually pastes something like "Directions to Studio Eleven, 6.1 km" and then types /map-route. Map it into CONFIG:
 
 - `destination`: the pin label; `eta`, `distance`, `note`, `button`: the bottom card
 - `route`: waypoints as street intersections `[col, row]`. Consecutive points must share a column or a row (streets are a grid). Higher row = nearer the viewer. Keep it within about cols -4..4 and rows -6..6 so it stays on the generated city; 4–7 waypoints with 3–5 turns looks best.
@@ -76,15 +76,15 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--ground)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  destination: "The Studio",             // pin label at the end of the route
-  eta: "12 min", distance: "4.2 km", note: "Fastest route", button: "Go",
+  destination: "Studio Eleven",          // pin label at the end of the route
+  eta: "18 min", distance: "6.1 km", note: "Avoids the flyover", button: "Start",
   // route waypoints as street intersections [col, row]; consecutive points must share a col or a row.
   // cols run -8..8, rows -10..10 (higher row = nearer the viewer); keep the route within about cols -4..4, rows -6..6. Start = first point.
-  route: [[-3,5],[-3,2],[0,2],[0,-1],[3,-1],[3,-4]],
+  route: [[-4,5],[-4,3],[-1,3],[-1,0],[2,0],[2,-3]],
   river: 1,                               // block column that is a river (null for none); streets cross it as bridges
-  parks: [[-1,-3],[2,-2],[-4,0],[4,3],[-2,6]],     // block [col,row] that are parks
-  landmarks: [["Old Town",-3,4],["Central Station",1.5,0.6],["Riverside Park",2,-2.6]], // [name, col, row] (fractions ok)
-  seed: 3
+  parks: [[-2,-3],[3,-2],[-5,1],[4,3],[-2,6]],     // block [col,row] that are parks
+  landmarks: [["Old Market",-4,4.2],["Metro Junction",0.4,1.6],["Lakeside",1.1,4.4]], // [name, col, row] (fractions ok)
+  seed: 5
 };
 /* ========================================================= */
 const C = CONFIG, $ = s => document.querySelector(s), NS = "http://www.w3.org/2000/svg";
