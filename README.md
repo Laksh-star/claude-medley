@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="claude-medley: nine motion-graphics reel styles, an SME cash-crisis triage, and two writing skills for Claude" width="100%">
+  <img src="assets/medley-banner.png" alt="claude-medley: nine motion-graphics reel styles, an SME cash-crisis triage, and two writing skills for Claude" width="100%">
 </p>
 
 <p align="center">
@@ -36,19 +36,19 @@ Each skill turns one pasted line into a **720×1280 (9:16) MP4, about 8 seconds 
 
 <table>
 <tr>
-<td align="center" width="33%"><img src="assets/previews/stat-chart.gif" width="200" alt="stat-chart preview"><br><b><code>stat-chart</code></b><br>Big number counts up, a chart draws itself, one callout marks the turning point. <i>Shown: 52 days of my own AI-agent usage.</i></td>
-<td align="center" width="33%"><img src="assets/previews/headline.gif" width="200" alt="headline preview"><br><b><code>headline</code></b><br>A newspaper page rises, the camera pushes in, one line gets highlighted.</td>
-<td align="center" width="33%"><img src="assets/previews/ink-wash.gif" width="200" alt="ink-wash preview"><br><b><code>ink-wash</code></b><br>Ink-painting title card: misty peaks, a red sun, a brush-revealed vertical title.</td>
+<td align="center" width="33%"><img src="assets/reels/stat-chart.gif" width="200" alt="stat-chart preview"><br><b><code>stat-chart</code></b><br>Big number counts up, a chart draws itself, one callout marks the turning point. <i>Shown: 52 days of my own AI-agent usage.</i></td>
+<td align="center" width="33%"><img src="assets/reels/headline.gif" width="200" alt="headline preview"><br><b><code>headline</code></b><br>A newspaper page rises, the camera pushes in, one line gets highlighted.</td>
+<td align="center" width="33%"><img src="assets/reels/ink-wash.gif" width="200" alt="ink-wash preview"><br><b><code>ink-wash</code></b><br>Ink-painting title card: misty peaks, a red sun, a brush-revealed vertical title.</td>
 </tr>
 <tr>
-<td align="center"><img src="assets/previews/map-route.gif" width="200" alt="map-route preview"><br><b><code>map-route</code></b><br>An isometric city builds, a route draws itself to a pin, an ETA card slides up.</td>
-<td align="center"><img src="assets/previews/teardown.gif" width="200" alt="teardown preview"><br><b><code>teardown</code></b><br>Exploded product view: layers lift apart and every part gets a numbered label.</td>
-<td align="center"><img src="assets/previews/paper-desk.gif" width="200" alt="paper-desk preview"><br><b><code>paper-desk</code></b><br>Evidence on the desk: a chart circled in red marker, a hook label, a highlighted note.</td>
+<td align="center"><img src="assets/reels/map-route.gif" width="200" alt="map-route preview"><br><b><code>map-route</code></b><br>An isometric city builds, a route draws itself to a pin, an ETA card slides up.</td>
+<td align="center"><img src="assets/reels/teardown.gif" width="200" alt="teardown preview"><br><b><code>teardown</code></b><br>Exploded product view: layers lift apart and every part gets a numbered label.</td>
+<td align="center"><img src="assets/reels/paper-desk.gif" width="200" alt="paper-desk preview"><br><b><code>paper-desk</code></b><br>Evidence on the desk: a chart circled in red marker, a hook label, a highlighted note.</td>
 </tr>
 <tr>
-<td align="center"><img src="assets/previews/phone-mockup.gif" width="200" alt="phone-mockup preview"><br><b><code>phone-mockup</code></b><br>A phone floats in with a live dashboard while UI cards pop out around it.</td>
-<td align="center"><img src="assets/previews/ui-walkthrough.gif" width="200" alt="ui-walkthrough preview"><br><b><code>ui-walkthrough</code></b><br>A cursor clicks through a product flow, with numbered step captions.</td>
-<td align="center"><img src="assets/previews/timeline.gif" width="200" alt="timeline preview"><br><b><code>timeline</code></b><br>A headline, then milestone cards land one by one along a diagonal timeline.</td>
+<td align="center"><img src="assets/reels/phone-mockup.gif" width="200" alt="phone-mockup preview"><br><b><code>phone-mockup</code></b><br>A phone floats in with a live dashboard while UI cards pop out around it.</td>
+<td align="center"><img src="assets/reels/ui-walkthrough.gif" width="200" alt="ui-walkthrough preview"><br><b><code>ui-walkthrough</code></b><br>A cursor clicks through a product flow, with numbered step captions.</td>
+<td align="center"><img src="assets/reels/timeline.gif" width="200" alt="timeline preview"><br><b><code>timeline</code></b><br>A headline, then milestone cards land one by one along a diagonal timeline.</td>
 </tr>
 </table>
 
@@ -108,7 +108,7 @@ claude-medley/
 │   ├── business/  skills/  cfo-triage-lite
 │   └── content/   skills/  content-dump-to-article · cinema-management-framework-extractor
 ├── dist/                               # one .zip per skill for the Claude apps
-├── assets/                             # banner, previews
+├── assets/                             # banner, reel previews
 └── scripts/package.sh                  # rebuilds dist/
 ```
 
