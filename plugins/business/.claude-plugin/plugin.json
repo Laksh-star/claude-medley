@@ -1,0 +1,10 @@
+{
+  "name": "business",
+  "version": "1.0.0",
+  "description": "CFO Triage Lite: 5-Fuse emergency financial triage for SMEs in crisis, with Indian SME context built in.",
+  "author": { "name": "Lakshmi Narayana", "url": "https://github.com/Laksh-star" },
+  "homepage": "https://github.com/Laksh-star/claude-medley",
+  "repository": "https://github.com/Laksh-star/claude-medley",
+  "license": "MIT",
+  "keywords": ["finance","sme","cash-flow","triage"]
+}

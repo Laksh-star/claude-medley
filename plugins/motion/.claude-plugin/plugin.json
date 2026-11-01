@@ -1,0 +1,10 @@
+{
+  "name": "motion",
+  "version": "1.0.0",
+  "description": "Nine 9:16 motion-graphics reel styles rendered locally with HyperFrames (HTML + GSAP to MP4). Paste a line, run the command, get an MP4.",
+  "author": { "name": "Lakshmi Narayana", "url": "https://github.com/Laksh-star" },
+  "homepage": "https://github.com/Laksh-star/claude-medley",
+  "repository": "https://github.com/Laksh-star/claude-medley",
+  "license": "MIT",
+  "keywords": ["video","motion-graphics","reels","hyperframes","gsap"]
+}

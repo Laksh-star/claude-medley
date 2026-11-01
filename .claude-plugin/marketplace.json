@@ -1,0 +1,25 @@
+{
+  "name": "claude-medley",
+  "description": "A medley of Claude skills by Lakshmi Narayana: nine motion-graphics reel styles, an SME cash-crisis triage, and two writing skills for cinema-to-management essays.",
+  "owner": {
+    "name": "Lakshmi Narayana",
+    "url": "https://github.com/Laksh-star"
+  },
+  "plugins": [
+    {
+      "name": "motion",
+      "source": "./plugins/motion",
+      "description": "Nine 9:16 motion-graphics reel styles rendered locally with HyperFrames: stat-chart, headline, ink-wash, map-route, teardown, paper-desk, phone-mockup, ui-walkthrough, timeline."
+    },
+    {
+      "name": "business",
+      "source": "./plugins/business",
+      "description": "CFO Triage Lite: the 5-Fuse emergency financial triage for SMEs in a cash crunch (community edition)."
+    },
+    {
+      "name": "content",
+      "source": "./plugins/content",
+      "description": "Turn research dumps into fact-checked articles, and extract management frameworks from films."
+    }
+  ]
+}
