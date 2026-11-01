@@ -105,15 +105,15 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  publication: "The Harbor Ledger",           // fictional masthead — never a real outlet's name
-  dateline: "Wednesday, October 28, 2026", edition: "Business Edition",
-  nav: ["World","Business","Markets","Tech","Opinion","Work"],
-  kicker: "Business / Labor",
-  headline: "A regional retailer quietly moved its call center to AI. Then margins doubled.",
-  byline: "By Nadia Rourke", bydate: "Oct 28, 2026 · 7 min read",
+  publication: "The Daily Interval",          // fictional masthead — never a real outlet's name
+  dateline: "Friday, November 6, 2026", edition: "Weekend Edition",
+  nav: ["Cinema","Business","Markets","Tech","Opinion","Culture"],
+  kicker: "Cinema / Business",
+  headline: "A small studio gave its script desk an AI reader. The real win wasn't the savings.",
+  byline: "By Meera Rao", bydate: "Nov 6, 2026 · 6 min read",
   // wrap the ONE line to highlight in [[ ]]
-  body: "When Halvorsen Home Goods moved its customer calls to an automated agent last spring, executives called it a pilot. [[By September, support costs had fallen 58 percent while a team of eleven handled twice the volume.]] Internal documents show the plan was approved a full year before staff were told.",
-  chipWho: "Reader", chipText: "Read the first paragraph again. That's the whole story." // set chipText to "" to drop the comment chip
+  body: "When Monsoon Reel Studios added an AI reader to its script desk last summer, the producers expected to save money. [[Instead, the time from first draft to greenlight fell from eleven weeks to four.]] The savings arrived later, and from a place nobody had planned for.",
+  chipWho: "Reader", chipText: "Speed was the story all along." // set chipText to "" to drop the comment chip
 };
 /* ========================================================= */
 const C = CONFIG, $ = s => document.querySelector(s);

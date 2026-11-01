@@ -11,7 +11,7 @@ Good for: chapter or episode openers, story or film titles, poems and quotes, fe
 
 ## 1. Get the content
 
-The user usually pastes a title (e.g. "The river keeps no name") and then types /ink-wash. Map it into CONFIG:
+The user usually pastes a title (e.g. "Every road returns home") and then types /ink-wash. Map it into CONFIG:
 
 - `title`: the vertical title, ideally ≤ 26 characters (longer titles run into the water line; shorten or split the extra into `subtitle`)
 - `subtitle`: an optional small italic line; `chapter`: an optional right-edge label; use "" to drop either
@@ -88,10 +88,10 @@ svg{position:absolute;inset:0}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  title: "The river keeps no name", // vertical title, keep under ~26 characters
-  subtitle: "Three days down the river",  // small italic line beside it ("" to drop)
-  chapter: "Chapter one",           // right-edge vertical label ("" to drop)
-  seal: "R",                         // 1 Latin character in the red chop (an initial)
+  title: "Every road returns home", // vertical title, keep under ~26 characters
+  subtitle: "A story told in one evening",  // small italic line beside it ("" to drop)
+  chapter: "Act one",               // right-edge vertical label ("" to drop)
+  seal: "D",                         // 1 Latin character in the red chop (an initial)
   sun: { x: 470, y: 430, r: 62 },   // red sun position & size
   boat: true, cliff: true, birds: 4, seed: 11
 };

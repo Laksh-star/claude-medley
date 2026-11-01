@@ -9,9 +9,9 @@ A dark fintech-style card for reels and posts: a header with the org name, a hug
 
 ## 1. Get the data, and never invent it
 
-The user usually pastes a short line (e.g. "$4.2B, since the card launched") and then types /stat-chart. Map it into CONFIG:
+The user usually pastes a short line (e.g. "6.3M watch hours, up from 0.8M since our first original") and then types /stat-chart. Map it into CONFIG:
 
-- `endValue`, `prefix`, `suffix`, `decimals`: the headline figure ($4.2B → "$", 4.2, "B", 1)
+- `endValue`, `prefix`, `suffix`, `decimals`: the headline figure ($4.2B → "$", 4.2, "B", 1; 6.3M hours → "", 6.3, "M", 1)
 - `startValue`: where the count starts (usually the first series value)
 - `label`: what the number measures; `brand`: org or product name; `meta`: a small descriptor (units, cadence)
 - `series`: real data points as `[label, value]`, oldest first; put a year label only on the points that should show one on the axis
@@ -20,7 +20,7 @@ The user usually pastes a short line (e.g. "$4.2B, since the card launched") and
 
 Rules:
 - Only plot numbers the user gave or that come from a source they pointed to. If they give the big number but no series, ask for the data points (4–20 is ideal). If they explicitly want an illustrative version, you may sketch a plausible curve, but then set `source` to "Illustrative, not actual data".
-- `tagPill` must be arithmetic on the user's numbers (e.g. 4.2 / 0.5 = 8.4×); compute it, don't guess.
+- `tagPill` must be arithmetic on the user's numbers (e.g. 6.3 / 0.8 = 7.9×); compute it, don't guess.
 - Use a real org name only if it is the user's own or a client's with permission; otherwise use a fictional one.
 - If something essential is missing and the user isn't around, render with clearly labelled placeholders and say so.
 
@@ -98,18 +98,18 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  brand: "NORTHWIND PAY",                 // short org / product name (fictional placeholder)
-  meta: "TPV monthly · annualised · USD", // small top-right descriptor
-  label: "Annualised payment volume",    // what the big number measures
-  prefix: "$", suffix: "B", decimals: 1,  // big number formatting
-  startValue: 0.5, endValue: 4.2,         // counts from start to end
-  tagPill: "8.4×", tagText: "since the card launched", // the one-line takeaway
-  dateTag: "Sep 2025",                    // as-of date of the end value
+  brand: "KATHA STREAM",                  // short org / product name (fictional placeholder)
+  meta: "Hours · monthly · all regions",  // small top-right descriptor
+  label: "Monthly watch hours",          // what the big number measures
+  prefix: "", suffix: "M", decimals: 1,   // big number formatting
+  startValue: 0.8, endValue: 6.3,         // counts from start to end
+  tagPill: "7.9×", tagText: "since the first original", // the one-line takeaway
+  dateTag: "Oct 2025",                    // as-of date of the end value
   // series: [label, value]; x labels shown only where label is non-empty
-  series: [["2019",0.5],["",0.55],["2020",0.62],["",0.66],["2021",0.74],["",0.8],["2022",0.9],["",0.98],["",1.05],["2023",1.1],["",1.6],["",2.2],["",2.6],["2024",2.9],["",3.3],["",3.6],["2025",3.9],["",4.2]],
+  series: [["2020",0.8],["",0.85],["",0.95],["2021",1.0],["",1.1],["",1.2],["2022",1.3],["",1.35],["",1.5],["2023",1.6],["",2.4],["",3.1],["2024",3.9],["",4.4],["",4.9],["2025",5.5],["",6.0],["",6.3]],
   calloutIndex: 9,                        // series index where the event happened; line turns accent after it
-  calloutWhen: "Mar 2023", calloutWhat: "Card launches", calloutSub: "Volume doubles in five months",
-  source: "Source: placeholder data", range: "Jan 2019 – Sep 2025"
+  calloutWhen: "Jan 2023", calloutWhat: "First original drops", calloutSub: "Watch time triples in a year",
+  source: "Source: placeholder data", range: "Jan 2020 – Oct 2025"
 };
 /* ========================================================= */
 const C = CONFIG, $ = s => document.querySelector(s);

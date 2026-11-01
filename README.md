@@ -36,7 +36,7 @@ Each skill turns one pasted line into a **720×1280 (9:16) MP4, about 8 seconds 
 
 <table>
 <tr>
-<td align="center" width="33%"><img src="assets/previews/stat-chart.gif" width="200" alt="stat-chart preview"><br><b><code>stat-chart</code></b><br>Big number counts up, a chart draws itself, one callout marks the turning point.</td>
+<td align="center" width="33%"><img src="assets/previews/stat-chart.gif" width="200" alt="stat-chart preview"><br><b><code>stat-chart</code></b><br>Big number counts up, a chart draws itself, one callout marks the turning point. <i>Shown: 52 days of my own AI-agent usage.</i></td>
 <td align="center" width="33%"><img src="assets/previews/headline.gif" width="200" alt="headline preview"><br><b><code>headline</code></b><br>A newspaper page rises, the camera pushes in, one line gets highlighted.</td>
 <td align="center" width="33%"><img src="assets/previews/ink-wash.gif" width="200" alt="ink-wash preview"><br><b><code>ink-wash</code></b><br>Ink-painting title card: misty peaks, a red sun, a brush-revealed vertical title.</td>
 </tr>
