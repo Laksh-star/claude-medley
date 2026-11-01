@@ -55,7 +55,7 @@ Each skill turns one pasted line into a **720×1280 (9:16) MP4, about 8 seconds 
 **How you use it**
 
 ```text
-You:    $4.2B annualised volume, up from $0.5B since the card launched in Mar 2023
+You:    6.3M monthly watch hours, up from 0.8M since our first original in Jan 2023
         /motion:stat-chart
 Claude: (asks for the data points if you haven't given them, fills the config,
          runs `hyperframes check`, renders, checks frames)  →  stat-chart.mp4
@@ -118,7 +118,7 @@ Each skill is a self-contained folder with a `SKILL.md`. The motion skills embed
 
 ## Credits
 
-- The motion bundle was inspired by [@prayag_sonar](https://x.com/prayag_sonar)'s reel of Claude making animation styles. These skills were rebuilt from scratch on HyperFrames.
+- The motion styles were inspired by [@prayag_sonar](https://x.com/prayag_sonar)'s reel of Claude-made animation styles, and six of the command names follow his. All code, sample copy and renders here are original, built from scratch on HyperFrames.
 - [HyperFrames](https://github.com/heygen-com/hyperframes) by HeyGen (Apache 2.0) renders the video. [GSAP](https://gsap.com) drives the animation. Fonts are OFL-licensed, via [Fontsource](https://fontsource.org).
 - Built with Claude.
 

@@ -11,7 +11,7 @@ A dark fintech-style card for reels and posts: a header with the org name, a hug
 
 The user usually pastes a short line (e.g. "6.3M watch hours, up from 0.8M since our first original") and then types /stat-chart. Map it into CONFIG:
 
-- `endValue`, `prefix`, `suffix`, `decimals`: the headline figure ($4.2B → "$", 4.2, "B", 1; 6.3M hours → "", 6.3, "M", 1)
+- `endValue`, `prefix`, `suffix`, `decimals`: the headline figure ($3.5B → "$", 3.5, "B", 1; 6.3M hours → "", 6.3, "M", 1)
 - `startValue`: where the count starts (usually the first series value)
 - `label`: what the number measures; `brand`: org or product name; `meta`: a small descriptor (units, cadence)
 - `series`: real data points as `[label, value]`, oldest first; put a year label only on the points that should show one on the axis

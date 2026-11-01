@@ -112,16 +112,16 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg1)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  headline: "Your money, at a glance",   // above the phone ("" to drop)
-  appName: "Ledgerly",                    // fictional app name or the user's own app
-  balanceLabel: "Total balance", prefix: "$", balance: 24860, decimals: 0,
-  delta: "▲ 4.2% this month",
-  spark: [12, 14, 13, 17, 16, 19, 18, 22, 21, 25, 24, 28],        // shape of the in-app chart
-  actions: ["Send", "Request", "Cards", "More"],
-  transactions: [["Coffee Lab", "Today · Food", "−$4.80", "#f4b860"], ["Payroll", "Yesterday · Income", "+$3,200", "#4cc38a"], ["Metro Card", "Mon · Transport", "−$25.00", "#7aa2f7"]],
-  card1: { title: "Payday", text: "Salary credited · $3,200" },
-  card2: { title: "Savings goal", value: "$1,240", progress: .62, note: "62% of $2,000" },
-  card3: { title: "Budget used", text: "8 days left", ring: .68 }
+  headline: "Your watchlist, sorted",    // above the phone ("" to drop)
+  appName: "Reelbook",                    // fictional app name or the user's own app
+  balanceLabel: "Films watched this year", prefix: "", balance: 148, decimals: 0,
+  delta: "▲ 12 this month",
+  spark: [3, 5, 4, 7, 6, 9, 8, 10, 12, 11, 14, 15],             // shape of the in-app chart
+  actions: ["Watch", "Lists", "Friends", "More"],
+  transactions: [["Night Train", "Tonight · Drama", "2h 18m", "#f4b860"], ["Long Interval", "Yesterday · Classic", "+1", "#4cc38a"], ["Monsoon Reel", "Mon · Series", "Ep 4", "#7aa2f7"]],
+  card1: { title: "New episode", text: "Monsoon Reel · Ep 5 is out" },
+  card2: { title: "Yearly goal", value: "148 films", progress: .74, note: "74% of 200" },
+  card3: { title: "Queued", text: "3 films this weekend", ring: .6 }
 };
 /* ========================================================= */
 const C = CONFIG, $ = s => document.querySelector(s), NS = "http://www.w3.org/2000/svg";

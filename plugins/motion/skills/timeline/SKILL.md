@@ -3,15 +3,15 @@ name: "timeline"
 description: "Animate a milestone story as a vertical 9:16 MP4: a headline, then a diagonal timeline draws itself while dated milestone cards land one by one, the last highlighted. Use for /timeline."
 ---
 
-# /timeline: from a garage to 31 countries
+# /timeline: from one camera to a studio of 60
 
-On a bright, airy background, a small mono eyebrow and a bold headline appear ("From a garage to **31 countries**", the key words in blue). A blue spine then draws diagonally down the frame; as it reaches each year, a dot pops, the year label fades in, and a white milestone card (icon, year, title, one-line detail) slides in beside it. The final milestone lands as a blue highlighted card and gets a small pulse. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
+On a bright, airy background, a small mono eyebrow and a bold headline appear ("From one camera to **a studio of 60**", the key words in blue). A blue spine then draws diagonally down the frame; as it reaches each year, a dot pops, the year label fades in, and a white milestone card (icon, year, title, one-line detail) slides in beside it. The final milestone lands as a blue highlighted card and gets a small pulse. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
 
 Good for: company or product origin stories, a career journey, project histories, "how we got here" anniversary posts.
 
 ## 1. Get the content
 
-The user usually pastes a headline (e.g. "From a garage to 31 countries") and then types /timeline. Map it into CONFIG:
+The user usually pastes a headline (e.g. "From one camera to a studio of 60") and then types /timeline. Map it into CONFIG:
 
 - `eyebrow`: a short mono label (name · range)
 - `title`: the headline, with the words to highlight wrapped in `[[ ]]`; keep it to two lines (≤ ~34 characters)
@@ -84,14 +84,14 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  eyebrow: "Northlight · 2016 → now",
-  title: "From a garage to [[31 countries]]",   // [[ ]] marks the highlighted words
+  eyebrow: "Monsoon Reel · 2012 → now",
+  title: "From one camera to [[a studio of 60]]",   // [[ ]] marks the highlighted words
   // [year, title, one-line detail] — oldest first, 3 to 6 items; the last one is highlighted
   milestones: [
-    ["2016", "A lamp in a garage", "Prototype one, made from offcuts"],
-    ["2018", "First 500 orders", "Pre-order sold out in a week"],
-    ["2021", "The Arc ships worldwide", "Now shipping to 31 countries"],
-    ["2024", "Copenhagen studio opens", "40 people, one long table"]
+    ["2012", "One camera, one story", "A short shot over four weekends"],
+    ["2015", "First festival screening", "300 people in a borrowed hall"],
+    ["2019", "The first feature", "Released in 40 theatres"],
+    ["2024", "A studio of 60", "Writers' room and edit suite"]
   ]
 };
 /* ========================================================= */

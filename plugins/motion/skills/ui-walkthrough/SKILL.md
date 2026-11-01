@@ -5,13 +5,13 @@ description: "Animate a product click-through as a vertical 9:16 MP4: a cursor c
 
 # /ui-walkthrough: cursor clicks through a flow, step captions
 
-A dark desktop app window (title bar, preview canvas, editing timeline) sits on a soft teal backdrop. A cursor clicks the top-right button, the camera zooms in, a dropdown opens and the cursor picks an item. A dialog opens with tabs and settings; the cursor drags a slider, then clicks the primary action. A progress bar fills, the dialog closes, the camera pulls back and a success toast slides in. Numbered black caption pills ("1 Click Share", "2 Set format & quality", "3 Click Export") narrate each beat. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
+A dark desktop app window (title bar, preview canvas, editing timeline) sits on a soft teal backdrop. A cursor clicks the top-right button, the camera zooms in, a dropdown opens and the cursor picks an item. A dialog opens with tabs and settings; the cursor drags a slider, then clicks the primary action. A progress bar fills, the dialog closes, the camera pulls back and a success toast slides in. Numbered black caption pills ("1 Open Publish", "2 Pick size & bitrate", "3 Hit Render") narrate each beat. Output: 720×1280 MP4, 8 s, rendered locally with HyperFrames (HTML + GSAP → MP4).
 
 Good for: "how to do X in our product" tips, feature demos, onboarding snippets, release-note reels. The beat structure (button → menu item → dialog with fields and a slider → primary action → toast) covers most SaaS flows: Share → Export, New → Invoice → Send, Settings → Integrations → Connect.
 
 ## 1. Get the content
 
-The user usually pastes a short task (e.g. "Export a reel at 1080p") and then types /ui-walkthrough. Map it into CONFIG:
+The user usually pastes a short task (e.g. "Render the trailer as a vertical master") and then types /ui-walkthrough. Map it into CONFIG:
 
 - `windowTitle`, `windowSub`: the app window's title bar
 - `trigger`: the top-right button clicked first; `menu` + `menuPick`: the dropdown items and the index the cursor picks
@@ -64,7 +64,7 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg1)}
 .sp{flex:1}
 .avs{display:flex}.avs i{width:26px;height:26px;border-radius:50%;border:2px solid var(--win);margin-left:-7px;display:block}
 #share{background:#2d3036;border:1px solid #42464e;padding:8px 16px;border-radius:9px;font:600 14px Inter,sans-serif}
-#preview{position:absolute;left:18px;top:80px;width:604px;height:330px;border-radius:12px;overflow:hidden;background:linear-gradient(#7fa6c9,#c9d9e6 55%,#e9eef2)}
+#preview{position:absolute;left:18px;top:80px;width:604px;height:330px;border-radius:12px;overflow:hidden;background:linear-gradient(#3b2f5c,#c0687a 62%,#f2b27a)}
 #preview svg{position:absolute;inset:0}
 #tline{position:absolute;left:18px;right:18px;top:430px;bottom:18px;background:var(--panel);border-radius:12px;padding:14px}
 .track{height:34px;border-radius:7px;margin-bottom:10px;display:flex;gap:4px}
@@ -108,7 +108,7 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg1)}
    <div class="bar"><div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
     <div class="ttl"><div class="a" id="wTitle"></div><div class="b" id="wSub"></div></div><div class="sp"></div>
     <div class="avs"><i style="background:#f59e0b"></i><i style="background:#ec4899"></i><i style="background:#22c55e"></i></div><div id="share"></div></div>
-   <div id="preview"><svg viewBox="0 0 604 330" preserveAspectRatio="none"><path d="M0,250 L90,150 L160,210 L250,110 L340,200 L420,140 L520,220 L604,170 L604,330 L0,330Z" fill="#5d7f9e"/><path d="M0,290 L120,220 L220,270 L330,200 L450,265 L604,230 L604,330 L0,330Z" fill="#3e5d7a"/><circle cx="470" cy="80" r="26" fill="#f3e3c3"/></svg></div>
+   <div id="preview"><svg viewBox="0 0 604 330" preserveAspectRatio="none"><circle cx="470" cy="80" r="22" fill="#f6e6c8"/><path d="M0,330 L0,230 L40,230 L40,200 L80,200 L80,240 L120,240 L120,180 L150,180 L150,150 L170,150 L170,180 L200,180 L200,220 L250,220 L250,190 L290,190 L290,240 L330,240 L330,170 L360,170 L360,200 L400,200 L400,160 L430,160 L430,210 L470,210 L470,185 L510,185 L510,230 L560,230 L560,200 L604,200 L604,330Z" fill="#3a2d4d"/><path d="M0,330 L0,270 L60,270 L60,250 L110,250 L110,280 L170,280 L170,240 L220,240 L220,275 L280,275 L280,255 L340,255 L340,285 L400,285 L400,245 L460,245 L460,270 L520,270 L520,255 L604,255 L604,330Z" fill="#241d33"/></svg></div>
    <div id="tline"><div class="track"><b style="width:28%;background:#5b8def"></b><b style="width:40%;background:#7c6cf0"></b><b style="width:30%;background:#5b8def"></b></div>
     <div class="track"><b style="width:55%;background:#2fa37a"></b><b style="width:43%;background:#2fa37a;opacity:.7"></b></div>
     <div class="track"><b style="width:98%;background:#c48a2e;opacity:.85"></b></div><div id="playhead"></div></div>
@@ -126,15 +126,15 @@ html,body{width:720px;height:1280px;overflow:hidden;background:var(--bg1)}
 <script>
 /* ============ CONFIG — the only block to edit ============ */
 const CONFIG = {
-  windowTitle: "Weekend recap v3", windowSub: "Saved 3:16 PM",
-  trigger: "Share",                                   // top-right button the cursor clicks first
-  menu: ["Invite people", "Copy link", "Export…", "Publish"], menuPick: 2,   // dropdown items + index to click
-  dialogTitle: "Export", tabs: ["Video", "GIF", "Audio"],
-  fields: [["Format", "MP4 · H.264"], ["Resolution", "1080 × 1920"], ["Frame rate", "30 fps"]],
-  slider: { label: "Quality", from: .4, to: .85, fromText: "Medium", toText: "High" },
-  action: "Export",                                   // primary button in the dialog
-  toast: { title: "Export complete", sub: "weekend-recap.mp4 · 48 MB" },
-  steps: ["Click Share", "Set format & quality", "Click Export"]   // captions for the three beats
+  windowTitle: "Trailer cut · final", windowSub: "Edited 2 min ago",
+  trigger: "Publish",                                 // top-right button the cursor clicks first
+  menu: ["Schedule", "Share link", "Render…", "Archive"], menuPick: 2,   // dropdown items + index to click
+  dialogTitle: "Render", tabs: ["Reel", "Square", "Wide"],
+  fields: [["Codec", "ProRes 422"], ["Size", "1080 × 1920"], ["Audio", "Stereo · −14 LUFS"]],
+  slider: { label: "Bitrate", from: .35, to: .9, fromText: "Standard", toText: "Master" },
+  action: "Render",                                   // primary button in the dialog
+  toast: { title: "Render finished", sub: "trailer-final.mov · 212 MB" },
+  steps: ["Open Publish", "Pick size & bitrate", "Hit Render"]   // captions for the three beats
 };
 /* ========================================================= */
 const C = CONFIG, $ = s => document.querySelector(s);
